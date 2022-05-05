@@ -20,7 +20,7 @@ exports.getJuego = (req, res) => {
 	
 	if (newJuego) {
 		if (!newJuego.isEnded())
-			res.json(newJuego.getPreguntasLevel())
+			res.json(newJuego.getPreguntaLevel())
 		else 
 			res.json({
 				'msg': 'juego finalizado',
@@ -32,16 +32,12 @@ exports.getJuego = (req, res) => {
 }
 
 exports.sendAnswer = (req, res) => {
-	const { preguntaId } = req.params
 	const { respuesta } = req.body
 
 	if (newJuego) {
 		if (!newJuego.isEnded()) {
-
-			newJuego.setPregunta(preguntaId)
 			newJuego.guess(respuesta)
-			
-			res.json({ 'index': newJuego.preguntaLevel })
+			res.json({ 'nivel': newJuego.preguntaLevel, 'puntuacion': newJuego.puntuacion })
 		} else 
 			res.json('juego finalizado')
 	} else {

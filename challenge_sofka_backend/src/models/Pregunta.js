@@ -23,8 +23,6 @@ class Pregunta {
      * @returns {boolean} retora si la opcion es correcta
      */
 	correctAnswer(choice) {
-		console.log('choice: '+ choice)
-		console.log('answer: ' + this.answer)
 		return choice === this.answer
 	}
 }

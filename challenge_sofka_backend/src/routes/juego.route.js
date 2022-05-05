@@ -3,7 +3,7 @@ const juegoRouter = require('express').Router()
 const bodyParser = require('body-parser')
 
 juegoRouter.use(bodyParser.urlencoded({ extended: true }))
-juegoRouter.post('/answer/:preguntaId',juegoController.sendAnswer )
+juegoRouter.post('/answer',juegoController.sendAnswer )
 juegoRouter.post('/',juegoController.createJuego )
 juegoRouter.get('/', juegoController.getJuego )
 // juegoRouter.put('/', )

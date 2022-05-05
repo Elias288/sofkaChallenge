@@ -24,7 +24,6 @@ class Juego {
 		const levelQuestions = this.questions.filter(pregunta => pregunta.categoryLevel === this.preguntaLevel)
 		this.pregunta = levelQuestions[Math.floor(Math.random()*levelQuestions.length)]
 		return this.pregunta
-		// return this.questions[this.preguntaLevel]
 	}
 	/**
 	 * 
@@ -35,21 +34,8 @@ class Juego {
 		return levelQuestions
 	}
 
-	/**
-	 * 
-	 * @param {string} preguntaId 
-	 */
-	setPregunta(preguntaId){
-		console.log('preguntaId: ' + preguntaId)
-		const question = this.questions.find(pregunta => pregunta.id === preguntaId)
-		this.pregunta = question
-	}
-
 	isEnded() {
-		console.log('cant preguntas: ' + this.questions.length )
-		console.log('pregunta level: ' + this.preguntaLevel)
-		console.log(`finalizado: ${this.finalizado ? 'true' : 'false'}`)
-		return this.preguntaLevel === 5 || this.finalizado
+		return this.preguntaLevel === 6 || this.finalizado
 	}
 
 	/**
@@ -58,8 +44,10 @@ class Juego {
 	 */
 	guess(answer) {
 		if (this.pregunta.correctAnswer(answer)) {
-			console.log('correcto')
 			this.puntuacion++
+			if (this.preguntaLevel === 5) {
+				this.puntuacion = this.puntuacion + this.puntuacion
+			}
 			this.preguntaLevel++
 		} else 
 			this.finalizado = true
