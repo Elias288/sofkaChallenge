@@ -10,7 +10,7 @@ require('./database')
 var app = express()
 
 app.set('pkg', pkg)
-app.use(cors({ credentials: true }))
+app.use(cors())
 app.use(express.json())
 
 app.get('/', (req, res) => {

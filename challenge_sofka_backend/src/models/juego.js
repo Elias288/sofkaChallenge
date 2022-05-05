@@ -25,14 +25,6 @@ class Juego {
 		this.pregunta = levelQuestions[Math.floor(Math.random()*levelQuestions.length)]
 		return this.pregunta
 	}
-	/**
-	 * 
-	 * @returns {Pregunta[]} 
-	 */
-	getPreguntasLevel() {
-		const levelQuestions = this.questions.filter(pregunta => pregunta.categoryLevel === this.preguntaLevel)
-		return levelQuestions
-	}
 
 	isEnded() {
 		return this.preguntaLevel === 6 || this.finalizado

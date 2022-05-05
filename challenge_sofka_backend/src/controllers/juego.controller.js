@@ -13,7 +13,7 @@ exports.createJuego = async (req, res) => {
 	)
 
 	newJuego = new Juego(PreguntasO)
-	res.json('juego creado')
+	res.json({msg: 'juego creado'})
 }
 
 exports.getJuego = (req, res) => {
@@ -32,11 +32,9 @@ exports.getJuego = (req, res) => {
 }
 
 exports.sendAnswer = (req, res) => {
-	const { respuesta } = req.body
-
 	if (newJuego) {
-		if (!newJuego.isEnded()) {
-			newJuego.guess(respuesta)
+		if (!newJuego.isEnded() || req.body.respuesta) {
+			newJuego.guess(req.body.respuesta)
 			res.json({ 'nivel': newJuego.preguntaLevel, 'puntuacion': newJuego.puntuacion })
 		} else 
 			res.json('juego finalizado')
