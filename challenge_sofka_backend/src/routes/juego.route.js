@@ -1,4 +1,4 @@
-const juegoController = require('../controllers/juegos.controllers')
+const juegoController = require('../controllers/juego.controller')
 const juegoRouter = require('express').Router()
 const bodyParser = require('body-parser')
 
