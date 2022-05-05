@@ -1,6 +1,9 @@
 const pkg = require('../package.json')
 
 // const usersRoutes = require('./routes/users.routes')
+const juegoController = require('./controllers/juegos.controllers')
+const categoriaController = require('./controllers/categorias.controllers')
+const preguntaConrtoller = require('./controllers/preguntas.controller')
 
 var express = require('express')
 var cors = require('cors')
@@ -21,6 +24,8 @@ app.get('/', (req, res) => {
 	})
 })
 
-// app.use('/api/users', usersRoutes)
+app.use('/api/juego', juegoController.createJuego)
+app.use('/api/categorias', categoriaController.getCategorias)
+app.use('/api/preguntas', preguntaConrtoller.getPreguntas)
 
 module.exports = app
