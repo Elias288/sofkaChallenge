@@ -38,9 +38,9 @@ class Quiz {
 	 */
 	guess(answer) {
 		if (this.pregunta.correctAnswer(answer)) {
-			this.puntuacion++
+			this.puntuacion === 0 ? this.puntuacion++ : this.puntuacion = this.puntuacion*2
 			if (this.preguntaLevel === 5) {
-				this.puntuacion = this.puntuacion + this.puntuacion
+				this.puntuacion = this.puntuacion *3
 			}
 			this.preguntaLevel++
 		} else 

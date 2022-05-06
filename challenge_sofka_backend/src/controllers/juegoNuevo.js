@@ -12,7 +12,7 @@ const newJuego = async (nombreUsuario, puntuacion) => {
 
 	// Si existe el juego
 	if (juego) {
-		juegosSchema.updateOne({ nombreUsuario }, { puntuacion })
+		await juegosSchema.updateOne({ nombreUsuario }, { puntuacion })
 		
 		// Si no existe el juego
 	} else {

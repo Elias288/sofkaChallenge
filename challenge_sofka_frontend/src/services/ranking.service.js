@@ -1,14 +1,13 @@
 const ENDPOINT = 'http://localhost:4000'
 
-export function sendAnswer ({ respuesta }) {
+export function ranking () {
 	const data = {
-		method: 'POST',
+		method: 'GET',
 		headers: {
 			'Content-Type': 'application/json',
-		},
-		body: JSON.stringify({ respuesta })
+		}
 	}
-	return fetch(`${ENDPOINT}/api/quiz/answer`, data)
+	return fetch(`${ENDPOINT}/api/juegos`, data)
 		.then(res => { return res.json() })
 		.then(res => { return res })
 		.catch(err => { return err })

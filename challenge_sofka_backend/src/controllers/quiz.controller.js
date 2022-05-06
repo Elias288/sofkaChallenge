@@ -23,7 +23,7 @@ exports.createQuiz = async (req, res) => {
 		new Pregunta (
 			p._id.toString(),
 			p.pregunta,
-			p.opciones,
+			p.opciones.sort(() => Math.random() - 0.5),
 			p.respuesta,
 			p.categoria.texto,
 			p.categoria.nivel

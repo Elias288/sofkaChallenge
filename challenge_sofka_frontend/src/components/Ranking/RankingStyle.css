@@ -1,0 +1,16 @@
+.Ranking {
+    margin-top: 1rem;
+    border: 1px solid #000;
+}
+.Ranking .title {
+    background: #000;
+    color: #fff;
+}
+.Ranking ul {
+    list-style: none;
+    text-align: center;
+    font-size: 1.5rem;
+}
+.Ranking p {
+    text-align: center;
+}

@@ -21,33 +21,22 @@ code {
     height: 100vh;
     align-items: center;
 }
-.Inicio {
-	padding: 1rem;
-	font-size: 1.5rem;
-	cursor: pointer;
-}
-
-.juego {
-	width: 500px;
-	border: 1px solid rgb(126, 126, 126);
-	border-radius: .5rem;
+.App .inicio{
+	border: 1px solid rgb(186, 186, 186);
+	border-radius: 1rem;
 	padding: 1rem;
 }
-.juego form {
-	display: grid;
-	gap: 1rem;
-}
-.juego form h2 strong {
-	color: #cfb20e;
-}
-.juego form h3 strong {
-	color: #0aa717;
-}
-.juego .botonera {
+.App form {
 	display: flex;
 	flex-direction: column;
 }
-.juego .botonera button {
-    padding: 1rem 0;
-    cursor: pointer;
+.App form input {
+	padding: 0.5rem;
+    margin-bottom: 0.3rem;
+    font-size: 1.5rem;
+}
+.BtnInicio {
+	padding: 1rem;
+	font-size: 1.5rem;
+	cursor: pointer;
 }
