@@ -16,16 +16,16 @@ exports.createJuego = async (req, res) => {
 	res.json({msg: 'juego creado'})
 }
 
+
 exports.getJuego = (req, res) => {
 	
 	if (newJuego) {
-		if (!newJuego.isEnded())
-			res.json(newJuego.getPreguntaLevel())
-		else 
-			res.json({
-				'msg': 'juego finalizado',
-				'puntuacion': newJuego.puntuacion
-			})
+		const ronda = {
+			0: newJuego.getPreguntaLevel(),
+			1: { 'msg': 'Felicitaciones, Has Ganado', 'puntuacion': newJuego.puntuacion },
+			2: { 'msg': 'Juego terminado', 'puntuacion': newJuego.puntuacion }
+		}		
+		res.json(ronda[newJuego.isEnded()])
 	} else {
 		return res.json('juego no creado')
 	}
@@ -33,11 +33,10 @@ exports.getJuego = (req, res) => {
 
 exports.sendAnswer = (req, res) => {
 	if (newJuego) {
-		if (!newJuego.isEnded() || req.body.respuesta) {
+		if (newJuego.isEnded() === 1 || newJuego.isEnded() === 2 || req.body.respuesta) {
 			newJuego.guess(req.body.respuesta)
 			res.json({ 'nivel': newJuego.preguntaLevel, 'puntuacion': newJuego.puntuacion })
-		} else 
-			res.json('juego finalizado')
+		}
 	} else {
 		return res.json('juego no creado')
 	}

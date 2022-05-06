@@ -1,7 +1,7 @@
 const pkg = require('../package.json')
 
 const juegoRoute = require('./routes/juego.route')
-const PreguntasCtrl = require('./controllers/preguntas.controller')
+const PreguntasRoute = require('./routes/pregunta.route')
 
 var express = require('express')
 var cors = require('cors')
@@ -23,6 +23,6 @@ app.get('/', (req, res) => {
 })
 
 app.use('/api/juego', juegoRoute)
-app.use('/api/preguntas', PreguntasCtrl.getPreguntas)
+app.use('/api/preguntas', PreguntasRoute)
 
 module.exports = app

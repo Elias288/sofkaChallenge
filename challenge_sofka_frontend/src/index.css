@@ -1,18 +1,53 @@
 * {
-  margin: 0;
-  padding: 0;
+	margin: 0;
+	padding: 0;
 }
 
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  	margin: 0;
+  	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  	font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+.App {
+	display: grid;
+    justify-items: center;
+    height: 100vh;
+    align-items: center;
+}
+.Inicio {
+	padding: 1rem;
+	font-size: 1.5rem;
+	cursor: pointer;
+}
+
+.juego {
+	width: 500px;
+	border: 1px solid rgb(126, 126, 126);
+	border-radius: .5rem;
+	padding: 1rem;
+}
+.juego form {
+	display: grid;
+	gap: 1rem;
+}
+.juego form h2 strong {
+	color: #cfb20e;
+}
+.juego form h3 strong {
+	color: #0aa717;
+}
+.juego .botonera {
+	display: flex;
+	flex-direction: column;
+}
+.juego .botonera button {
+    padding: 1rem 0;
+    cursor: pointer;
 }

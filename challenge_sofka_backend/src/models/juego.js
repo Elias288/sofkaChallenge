@@ -27,7 +27,7 @@ class Juego {
 	}
 
 	isEnded() {
-		return this.preguntaLevel === 6 || this.finalizado
+		return this.preguntaLevel === 6 ? 1 : 0 || this.finalizado ? 2: 0
 	}
 
 	/**

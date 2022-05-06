@@ -43,24 +43,33 @@ const Juego = () => {
 	}
 
 	return (
-		<div>
+		<div className='juego'>
 			{!pregunta && <h3>Loading</h3>}
 			{pregunta && mensaje.msg == '' && (
-				<form style={{'width': '500px', 'display':'flex', 'flexDirection':'column'}}>
+				<form>
 					<h1>{pregunta.pregunta}</h1>
-					<h2>Nivel: {pregunta.level}</h2>
-					<h3>Categoria: {pregunta.categoria}</h3>
-					{pregunta.opciones.map((op, key) => {
-						return (
-							<button onClick={onSubmit} key={key}>{op}</button>
-						)
-					})}
+					
+					<h2>Nivel: <strong>{pregunta.level} / 5</strong></h2>
+					
+					<h3>Categoria: <strong>{pregunta.categoria}</strong></h3>
+					
+					<div className='botonera'>
+						{pregunta.opciones.map((op, key) => {
+							return (
+								<button onClick={onSubmit} key={key}>
+									{op}
+								</button>
+							)
+						})}
+					</div>
 				</form>
 			)}
-			{mensaje.msg != '' && (<>
-				<h1>{mensaje.msg}</h1>
-				<h3>Puntuacion: {mensaje.puntuacion}</h3>
-			</>)}
+			{mensaje.msg != '' && (
+				<>
+					<h1>{mensaje.msg}</h1>
+					<h3>Puntuacion: {mensaje.puntuacion}</h3>
+				</>
+			)}
 		</div>
 	)
 }

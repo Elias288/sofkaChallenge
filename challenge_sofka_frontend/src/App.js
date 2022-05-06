@@ -6,7 +6,7 @@ function App() {
 
 	return (
 		<div className="App">
-			{!jugar && <button onClick={() => setJugar(true)}>Jugar</button>}
+			{!jugar && <button className='Inicio' onClick={() => setJugar(true)}>Jugar</button>}
 			{ jugar && <Juego />}
 		</div>
 	)
