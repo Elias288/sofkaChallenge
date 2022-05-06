@@ -41,11 +41,11 @@ exports.getQuiz = (req, res) => {
 		// Comprueba si el juego ha terminado y por qué
 		const ronda = {
 			// El juego continua
-			0: newQuiz.getPreguntaLevel(), 
+			0: { pregunta: newQuiz.getPreguntaLevel(), puntuacion: newQuiz.puntuacion }, 
 			// El juego finalizó porque se llegó a la ultima pregunta
-			1: { 'msg': 'Felicitaciones, Has Ganado', 'puntuacion': newQuiz.puntuacion },
+			1: { msg: 'Felicitaciones, Has Ganado', puntuacion: newQuiz.puntuacion },
 			// El juego finalizó porque no seleccionó la pregunta correcta
-			2: { 'msg': 'Juego terminado', 'puntuacion': newQuiz.puntuacion } 
+			2: { msg: 'Juego terminado', puntuacion: newQuiz.puntuacion } 
 		}		
 		res.json(ronda[newQuiz.isEnded()]) // Envia la respuesta
 

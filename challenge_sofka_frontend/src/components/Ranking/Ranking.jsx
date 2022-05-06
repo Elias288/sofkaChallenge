@@ -21,15 +21,11 @@ const Ranking = () => {
 			</div>
 			{ rankings.length > 0 && (
 				<ul>
-					{
-						rankings.map((ranking) => {
-							return (
-								<li key={ranking._id}>
-									{ranking.nombreUsuario} - {ranking.puntuacion}
-								</li>
-							)
-						})
-					}
+					{ rankings.map((ranking) => {
+						return (<li key={ranking._id}>
+							{ranking.nombreUsuario} - {ranking.puntuacion}
+						</li>)
+					})}
 				</ul>
 			)}
 			{ rankings.length === 0 && <p>loading...</p>}

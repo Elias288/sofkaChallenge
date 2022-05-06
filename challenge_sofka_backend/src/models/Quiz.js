@@ -40,7 +40,7 @@ class Quiz {
 		if (this.pregunta.correctAnswer(answer)) {
 			this.puntuacion === 0 ? this.puntuacion++ : this.puntuacion = this.puntuacion*2
 			if (this.preguntaLevel === 5) {
-				this.puntuacion = this.puntuacion *3
+				this.puntuacion = this.puntuacion + this.puntuacion/2
 			}
 			this.preguntaLevel++
 		} else 

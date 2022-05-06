@@ -6,9 +6,13 @@ function App() {
 	const [jugar, setJugar] = useState(false)
 	const [userName, setUserName] = useState('')
 
+	const jugarToggle = () => {
+		setJugar(!jugar)
+	}
+
 	const onSubmit = (e) => {
 		e.preventDefault()
-		setJugar(true)
+		jugarToggle()
 	}
 
 	return (
@@ -26,7 +30,7 @@ function App() {
 					<Ranking />
 				</div>
 			)}
-			{ jugar && <Juego username={userName} /> }
+			{ jugar && <Juego username={userName} setJugar={jugarToggle} /> }
 		</div>
 	)
 }
