@@ -20,15 +20,22 @@ const Ranking = () => {
 				<h3>Ranking</h3>
 			</div>
 			{ rankings.length > 0 && (
-				<ul>
-					{ rankings.map((ranking) => {
-						return (<li key={ranking._id}>
-							{ranking.nombreUsuario} - {ranking.puntuacion}
-						</li>)
-					})}
-				</ul>
+				<div className="lista">
+					<table>
+						<tbody>
+							{ rankings.map((ranking) => {
+								return (
+									<tr key={ranking._id}>
+										<td>{ranking.nombreUsuario}</td>
+										<td className='puntuacion'>{ranking.puntuacion}</td>
+									</tr>
+								)
+							})}
+						</tbody>
+					</table>
+				</div>
 			)}
-			{ rankings.length === 0 && <p>loading...</p>}
+			{ rankings.length === 0 && <h3>loading...</h3>}
 		</div>
 	)
 }

@@ -1,17 +1,28 @@
 .Ranking {
-    margin-top: 1rem;
+    min-width: 200px;
     border: 1px solid #000;
+    width: 100%;
+    grid-row: 1 / 4;
+    grid-column: 2;
 }
 .Ranking .title {
     background: #000;
     color: #fff;
     padding: .2rem .5rem;
 }
-.Ranking ul {
-    list-style: none;
-    text-align: center;
+.Ranking table td {
     font-size: 1.5rem;
 }
-.Ranking p {
+.Ranking .lista {
+    padding: 0 1rem;
+}
+.Ranking .lista table{
+    width: 100%;
+
+}
+.puntuacion {
+    text-align: right;
+}
+.Ranking h3 {
     text-align: center;
 }

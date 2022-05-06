@@ -51,8 +51,8 @@ const Juego = ({ username, setJugar }) => {
 
 	return (
 		<div className='juego'>
-			{ !pregunta && <h3>Loading</h3> }
-			{ pregunta && mensaje.msg == '' && (<>
+			{ !pregunta.opciones.length > 0 && <h3>Loading...</h3> }
+			{ pregunta.opciones.length > 0 && mensaje.msg == '' && (<>
 				<form>
 					<h1>{pregunta.pregunta}</h1>
 					
@@ -72,11 +72,9 @@ const Juego = ({ username, setJugar }) => {
 				</form>
 				<p>{ pregunta.level !== 5 ? 'Puntaje X 2' : 'Puntaje X 3' }</p>
 			</> )}
-			{ mensaje.msg === '' && (
-				<div className='score'>
-					<p>Puntuació: <strong>{ mensaje.puntuacion }</strong></p>
-				</div>
-			) }
+			{ mensaje.msg === '' && (<div className='score'>
+				<p>Puntuació: <strong>{ mensaje.puntuacion }</strong></p>
+			</div>) }
 			{ mensaje.msg != '' && (<>
 				<div className='Mensaje'>
 					<h1>{mensaje.msg}</h1>
