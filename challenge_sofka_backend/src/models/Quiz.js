@@ -1,8 +1,8 @@
 //@ts-check
 // eslint-disable-next-line no-unused-vars
-const Pregunta = require('../models/Pregunta')
+const Pregunta = require('./Pregunta')
 
-class Juego {
+class Quiz {
 	puntuacion = 0
 	preguntaLevel = 1
 	finalizado = false
@@ -11,9 +11,11 @@ class Juego {
 	/**
    *
    * @param {Pregunta[]} questions
+   * @param {String} username
    */
-	constructor(questions) {
+	constructor(questions, username) {
 		this.questions = questions
+		this.userName = username
 	}
 
 	/**
@@ -46,4 +48,4 @@ class Juego {
 	}
 }
 
-module.exports = Juego
+module.exports = Quiz
